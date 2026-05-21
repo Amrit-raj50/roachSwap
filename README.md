@@ -3,6 +3,8 @@
   <h1>RoachSwap</h1>
   <p><strong>Voice of the Lazy & Unemployed.</strong></p>
   <p><em>They called us cockroaches. We decided to build.</em></p>
+  
+  [![Discord](https://img.shields.io/badge/Discord-Join_the_Colony-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/BeFN78k5b)
 </div>
 
 ---
