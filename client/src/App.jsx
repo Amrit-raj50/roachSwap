@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import MovementBanner from "./components/movement/MovementBanner";
 import ProtectedRoute from "./components/shared/ProtectedRoute";
 import { Toaster } from "react-hot-toast";
+import WelcomePopup from "./components/shared/WelcomePopup";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -45,6 +46,7 @@ export default function App() {
                 },
               }}
             />
+            <WelcomePopup />
             <MovementBanner />
             <div className="sticky top-0 z-50 flex flex-col w-full">
               <Navbar />
