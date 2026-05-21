@@ -4,6 +4,11 @@
   <p><strong>Voice of the Lazy & Unemployed.</strong></p>
   <p><em>They called us cockroaches. We decided to build.</em></p>
   
+  [![Forks](https://img.shields.io/github/forks/Amrit-raj50/roachSwap?style=for-the-badge)](https://github.com/Amrit-raj50/roachSwap/network/members)
+  [![Stars](https://img.shields.io/github/stars/Amrit-raj50/roachSwap?style=for-the-badge)](https://github.com/Amrit-raj50/roachSwap/stargazers)
+  [![Issues](https://img.shields.io/github/issues/Amrit-raj50/roachSwap?style=for-the-badge)](https://github.com/Amrit-raj50/roachSwap/issues)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/Amrit-raj50/roachSwap/pulls)
+  [![License](https://img.shields.io/github/license/Amrit-raj50/roachSwap?style=for-the-badge)](https://github.com/Amrit-raj50/roachSwap/blob/main/LICENSE)
   [![Discord](https://img.shields.io/badge/Discord-Join_the_Colony-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/BeFN78k5b)
 </div>
 
