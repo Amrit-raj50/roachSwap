@@ -154,7 +154,7 @@ export default function OpenSource() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="border-2 border-roach-surface p-6 hover:bg-roach-surface hover:text-roach-ink transition-colors group cursor-pointer" onClick={() => openLink('https://github.com/Amrit-raj50/roachSwap/blob/main/README.md')}>
-              <div className="text-4xl mb-4 group-hover:animate-bounce">📜</div>
+              <img src="/assets/roach_anthill.png" alt="README Poster" className="w-full h-40 object-cover border-2 border-roach-surface mb-4 grayscale-[0.8] group-hover:grayscale-0 group-hover:border-roach-ink transition-all" />
               <h3 className="font-bold text-xl uppercase mb-2">README.md</h3>
               <p className="font-mono text-xs opacity-80 mb-6 leading-relaxed">What RoachSwap is, why it exists, and how to run it locally. If you read only one doc — read this one.</p>
               <div className="text-roach-green group-hover:text-roach-coral font-bold font-mono text-xs uppercase tracking-widest">→ Read Now</div>
@@ -162,7 +162,7 @@ export default function OpenSource() {
             </div>
 
             <div className="border-2 border-roach-surface p-6 hover:bg-roach-surface hover:text-roach-ink transition-colors group cursor-pointer" onClick={() => openLink('https://github.com/Amrit-raj50/roachSwap/blob/main/ARCHITECTURE.md')}>
-              <div className="text-4xl mb-4 group-hover:animate-bounce">🏗️</div>
+              <img src="/assets/roach_scrapyard.png" alt="Architecture Poster" className="w-full h-40 object-cover border-2 border-roach-surface mb-4 grayscale-[0.8] group-hover:grayscale-0 group-hover:border-roach-ink transition-all" />
               <h3 className="font-bold text-xl uppercase mb-2">ARCHITECTURE.md</h3>
               <p className="font-mono text-xs opacity-80 mb-6 leading-relaxed">How the codebase is structured. Pages, components, backend routes — everything mapped and explained.</p>
               <div className="text-roach-green group-hover:text-roach-coral font-bold font-mono text-xs uppercase tracking-widest">→ Read Now</div>
@@ -170,7 +170,7 @@ export default function OpenSource() {
             </div>
 
             <div className="border-2 border-roach-surface p-6 hover:bg-roach-surface hover:text-roach-ink transition-colors group cursor-pointer" onClick={() => openLink('https://github.com/Amrit-raj50/roachSwap/blob/main/CONTRIBUTING.md')}>
-              <div className="text-4xl mb-4 group-hover:animate-bounce">🤝</div>
+              <img src="/assets/roach_moult.png" alt="Contributing Poster" className="w-full h-40 object-cover border-2 border-roach-surface mb-4 grayscale-[0.8] group-hover:grayscale-0 group-hover:border-roach-ink transition-all" />
               <h3 className="font-bold text-xl uppercase mb-2">CONTRIBUTING.md</h3>
               <p className="font-mono text-xs opacity-80 mb-6 leading-relaxed">The rules of the colony. PR process, code review expectations, and how to not make the maintainer cry.</p>
               <div className="text-roach-green group-hover:text-roach-coral font-bold font-mono text-xs uppercase tracking-widest">→ Read Now</div>
