@@ -22,6 +22,15 @@ export default {
         sans: ["Inter", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(100vw)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
+      animation: {
+        scroll: 'scroll 28s linear infinite',
+      }
     },
   },
   plugins: [],

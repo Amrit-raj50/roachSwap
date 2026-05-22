@@ -24,6 +24,7 @@ import ScrambleMode from "./pages/ScrambleMode";
 import Profile from "./pages/Profile";
 import MovementProjects from "./pages/MovementProjects";
 import Collaborate from "./pages/Collaborate";
+import OpenSource from "./pages/OpenSource";
 import ScrapYard from "./pages/ScrapYard";
 import AdminPanel from "./pages/AdminPanel";
 import RejectionWall from "./pages/RejectionWall";
@@ -63,6 +64,7 @@ export default function App() {
                 <Route path="/exoresume/:userId" element={<ExoResume />} />
                 <Route path="/movement" element={<MovementProjects />} />
                 <Route path="/collaborate" element={<Collaborate />} />
+                <Route path="/opensource" element={<OpenSource />} />
                 <Route element={<ProtectedRoute />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/anthill" element={<Anthill />} />
