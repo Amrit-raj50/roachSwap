@@ -19,6 +19,7 @@ import userRoutes from "./routes/userRoutes.js";
 import movementRoutes from "./routes/movementRoutes.js";
 import osRepoRoutes from "./routes/osRepoRoutes.js";
 import rantRoutes from "./routes/rantRoutes.js";
+import moultRoutes from "./routes/moultRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -49,6 +50,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/movement", movementRoutes);
 app.use("/api/opensource", osRepoRoutes);
 app.use("/api/rants", rantRoutes);
+app.use("/api/moult", moultRoutes);
 
 app.use(errorHandler);
 
