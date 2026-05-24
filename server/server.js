@@ -21,10 +21,7 @@ import userRoutes from "./routes/userRoutes.js";
 import movementRoutes from "./routes/movementRoutes.js";
 import osRepoRoutes from "./routes/osRepoRoutes.js";
 import rantRoutes from "./routes/rantRoutes.js";
-import rejectionRoutes from "./routes/rejections.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import moultRoutes from "./routes/moultRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -55,9 +52,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/movement", movementRoutes);
 app.use("/api/opensource", osRepoRoutes);
 app.use("/api/rants", rantRoutes);
-app.use("/api/rejections", rejectionRoutes);
-
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/api/moult", moultRoutes);
 
 app.use(errorHandler);
 
