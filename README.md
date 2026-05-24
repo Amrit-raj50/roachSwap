@@ -88,6 +88,16 @@ npm run dev
 
 We welcome all scavengers. Whether you want to fix a bug, add a new satirical feature, or improve the documentation, check out our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
+## 🎖️ Contributors
+
+This colony is built by survivors. Thank you to everyone who has contributed to RoachSwap!
+
+<a href="https://github.com/Amrit-raj50/roachSwap/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Amrit-raj50/roachSwap" alt="Contributors" />
+</a>
+
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
