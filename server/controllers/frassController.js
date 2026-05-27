@@ -21,3 +21,22 @@ export const createProposal = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const voteOnProposal = async (req, res) => {
+  try {
+    const proposal = await FrassProposal.findById(req.params.id);
+    if (!proposal) return res.status(404).json({ message: "Proposal not found" });
+
+    if (proposal.votes.includes(req.user._id)) {
+      return res.status(400).json({ message: "You have already voted on this proposal" });
+    }
+
+    proposal.votes.push(req.user._id);
+    proposal.voteCount = proposal.votes.length;
+    
+    await proposal.save();
+    res.json(proposal);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
