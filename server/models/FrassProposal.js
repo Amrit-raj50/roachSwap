@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
 const FrassProposalSchema = new mongoose.Schema({
-  title: { type: String, required: true, default: "Untitled Proposal" },
-  description: { type: String },
-  project: { type: mongoose.Schema.Types.ObjectId, ref: "Project" },
+  project: { type: mongoose.Schema.Types.ObjectId, ref: "Project", required: true },
   proposedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   amountRequested: { type: Number, required: true },
   purpose: { type: String, required: true },
