@@ -134,32 +134,51 @@ export default function ExoResume() {
     };
 
     const runExportPDF = () => {
-      window.html2pdf()
-        .from(element)
-        .set(opt)
-        .save()
-        .then(() => {
-          toast.success("ExoResume PDF downloaded successfully! 📄");
-        })
-        .catch((err) => {
-          console.error("PDF export failed:", err);
-          toast.error("Could not compile your PDF resume.");
-        })
-        .finally(() => {
-          setExporting(false);
-        });
+      if (typeof window.html2pdf !== 'function') {
+        toast.error("PDF generation dependency is unavailable.");
+        setExporting(false);
+        return;
+      }
+      try {
+        window.html2pdf()
+          .from(element)
+          .set(opt)
+          .save()
+          .then(() => {
+            toast.success("ExoResume PDF downloaded successfully! 📄");
+          })
+          .catch((err) => {
+            console.error("PDF export failed:", err);
+            toast.error("Could not compile your PDF resume.");
+          })
+          .finally(() => {
+            setExporting(false);
+          });
+      } catch (err) {
+        console.error("PDF initialization failed:", err);
+        toast.error("Could not initialize PDF export engine.");
+        setExporting(false);
+      }
     };
 
-    if (window.html2pdf) {
+    if (typeof window.html2pdf === 'function') {
       runExportPDF();
     } else {
+      if (document.getElementById("html2pdf-script")) {
+        toast.error("Export engine is still loading. Please try again.");
+        setExporting(false);
+        return;
+      }
+      
       // Inject CDN on the fly
       const script = document.createElement("script");
+      script.id = "html2pdf-script";
       script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
       script.onload = runExportPDF;
       script.onerror = () => {
-        toast.error("Failed to boot up export engine from CDN.");
+        toast.error("Failed to load PDF export engine. Check connection/adblockers.");
         setExporting(false);
+        script.remove();
       };
       document.body.appendChild(script);
     }
