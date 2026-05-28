@@ -19,6 +19,10 @@ export default function ProjectDetail() {
   }, [id]);
 
   const handleJoin = async () => {
+    if (!user) {
+      toast.error("You must be logged in to join.");
+      return;
+    }
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/projects/${id}/join`);
       toast.success(res.data.message);
@@ -60,19 +64,19 @@ export default function ProjectDetail() {
         )}
 
         <div className="mt-8 flex justify-end">
-          {user?._id !== project.owner?._id && !project.members.some(m => m._id === user?._id) && (
+          {user && user._id !== project.owner?._id && !(project.members || []).some(m => m._id === user._id) && (
             <button onClick={handleJoin} className="btn-primary">I'm In. Let's Build.</button>
           )}
-          {project.members.some(m => m._id === user?._id) && (
+          {user && (project.members || []).some(m => m._id === user._id) && (
             <span className="btn-secondary opacity-50 cursor-not-allowed">You're in this colony</span>
           )}
         </div>
       </div>
       
       <div className="card">
-        <h3 className="font-bold text-xl mb-4">Colony Members ({project.members.length})</h3>
+        <h3 className="font-bold text-xl mb-4">Colony Members ({(project.members || []).length})</h3>
         <div className="flex flex-wrap gap-2 font-mono">
-          {project.members.map(member => (
+          {(project.members || []).map(member => (
             <span key={member._id} className="bg-roach-surface border-2 border-roach-ink px-3 py-1 rounded-full text-sm">
               {member.alias}
             </span>
