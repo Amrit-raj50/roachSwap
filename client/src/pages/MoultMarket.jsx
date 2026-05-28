@@ -12,6 +12,7 @@ export default function MoultMarket() {
   // Create Skill List Form States
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ offering: "", wantingIn: "", availability: "Flexible" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Barter Proposal Modal States
   const [selectedSkill, setSelectedSkill] = useState(null);
@@ -33,6 +34,8 @@ export default function MoultMarket() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/skills`, formData);
       toast.success("Skill swap listed.");
@@ -40,6 +43,8 @@ export default function MoultMarket() {
       fetchSkills();
     } catch (err) {
       toast.error(err.response?.data?.message || COPY.error_generic);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -123,7 +128,9 @@ export default function MoultMarket() {
               <option>Evenings IST</option>
             </select>
           </div>
-          <button type="submit" className="btn-primary w-full">List Swap</button>
+          <button type="submit" disabled={isSubmitting} className="btn-primary w-full disabled:opacity-50">
+            {isSubmitting ? "Submitting..." : "List Swap"}
+          </button>
         </form>
       )}
 
