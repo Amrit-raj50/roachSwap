@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 
 export default function AdminPanel() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const [activeTab, setActiveTab] = useState("Projects"); // "Projects" or "Scraps"
   const [projects, setProjects] = useState([]);
   const [repos, setRepos] = useState([]);
@@ -44,6 +44,10 @@ export default function AdminPanel() {
       toast.error(`Failed to ${action} ${type}`);
     }
   };
+
+  if (authLoading) {
+    return <div className="text-center py-20 font-mono">Verifying credentials...</div>;
+  }
 
   if (!user || user.role !== "admin") {
     return <Navigate to="/" replace />;
